@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "lv_examples.h": "c",
+        "lv_demos.h": "c",
+        "lv_demo_stress.h": "c",
+        "chrono": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
