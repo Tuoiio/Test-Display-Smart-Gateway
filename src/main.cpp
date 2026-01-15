@@ -133,9 +133,21 @@ void beginWIFITask(void *pvParameters); //x
 LV_IMG_DECLARE(temperature_control);
 LV_IMG_DECLARE(humidity_control);
 LV_IMG_DECLARE(co2_control);
+
+#define DATA 3
+#define LATCH 46
+#define CLOCK 9
+
 void setup(){
     Serial.begin(460800); 
     Serial.println("LVGL TFT_eSPI Touchscreen Example");
+    pinMode(DATA, OUTPUT);
+    pinMode(LATCH, OUTPUT);
+    pinMode(CLOCK, OUTPUT);
+
+    digitalWrite(LATCH, LOW);              // Chuẩn bị ghi dữ liệu
+    shiftOut(DATA, CLOCK, MSBFIRST, 0xF0); // Ghi 8 bit ra 74HC595
+    digitalWrite(LATCH, HIGH);             // Chốt dữ liệu ra ngõ ra
     /*TFT init and Landsacpe orientation, flipped*/
     tft.begin();          
     tft.setRotation(3); 

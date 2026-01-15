@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "test",
+			"path": "../../../test1/test"
+		},
+		{
+			"name": "Test_TouchScreen",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
